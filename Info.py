@@ -10,16 +10,16 @@ firebase_admin.initialize_app(cred)
 
 db=firestore.client()
 
-#numberp="MH01AV886"
+
 def checkInfo(numberp):
     result=db.collection("NumberPlate").document(numberp).get()
 
-    if result:
+    if result.exists:
         #get registration date
         d=result.to_dict()["registrationDate"]
         string_date=str(d).split(" ")[0]
-        print(string_date)
         date=datetime.strptime(string_date,'%Y-%m-%d')+timedelta(days=1)
+        print("Registration date :",date)
 
         #get current date
         today=date.today()
@@ -27,7 +27,7 @@ def checkInfo(numberp):
         #cal difference 
         gap=today-date
         gap=gap.days/365.25
-        print(gap)
+        print("Vehicle age: ",gap)
 
         #check 15 years or above
         if(gap>=15):
@@ -43,5 +43,6 @@ def checkInfo(numberp):
         return "noDB",""
         
 
-#o,p=checkInfo(numberp)
-#print(o)
+# numberp="MHO1AV8866"
+# o,p=checkInfo(numberp)
+# print(o)

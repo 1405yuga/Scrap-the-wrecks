@@ -9,7 +9,7 @@ import cv2
 import numpy as np
 import time
 
-start=time.time()
+
 #Capture vehicle
 URL = "http://192.168.43.53:8080/shot.jpg"
 while True:
@@ -46,11 +46,10 @@ while True:
         else:
             #send sms 
             sendmsg.sms(numberp,ownerName,mobileno)
-    time.sleep(6)
+    time.sleep(10)
     print("Done.......!")
         
 
-end=time.time()
-print("EXECUTION TIME: ",(end-start))
+
     
 

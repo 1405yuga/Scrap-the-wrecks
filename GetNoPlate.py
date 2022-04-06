@@ -18,7 +18,6 @@ def getNoPlate(img):
         approx = cv2.approxPolyDP(contour, 10, True)
         if len(approx) == 4:
             location = approx
-            print(location," loc")
             break
     
     mask = np.zeros(gray.shape, np.uint8)
