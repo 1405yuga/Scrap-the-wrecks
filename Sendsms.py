@@ -2,7 +2,7 @@
 from twilio.rest import Client
 
 account_sid="AC454ef3886af69d20a97a631288a1153c"
-auth_token="fee185960533480c15adc1f40e4b3ec2"
+auth_token="72ec7ac0d37975e222f33bbc15588659"
 
 client=Client(account_sid, auth_token)
 
@@ -18,3 +18,4 @@ def sms(numberp,ownerName,phone):
     print(msg.sid)
     
 
+#sms("123456","Yuga",9307156651)

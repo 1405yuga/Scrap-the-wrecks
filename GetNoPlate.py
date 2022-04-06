@@ -38,6 +38,6 @@ def getNoPlate(img):
     print(digits)
     return digits
 
-im=cv2.imread("images/img5.jpeg")
-n=getNoPlate(im)
-print(n+" uuuu")
+# im=cv2.imread("images/img5.jpeg")
+# n=getNoPlate(im)
+# print(n+" uuuu")
