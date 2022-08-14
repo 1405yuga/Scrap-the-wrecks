@@ -13,9 +13,8 @@ while True:
     q = cv2.waitKey(1)
     if q == ord("q"):
         break
-    if flag == 6:
-        frame = img
-        cv2.imshow("New", frame)
-        time.sleep(5)
+   
+    cv2.imshow("New", img)
+    time.sleep(10)
 
 cv2.destroyAllWindows()
